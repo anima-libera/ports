@@ -1,0 +1,107 @@
+%YAML 1.2
+---
+name: Ports
+file_extensions: [ports]
+scope: source.ports
+
+variables:
+
+  name: '[a-z0-9]+'
+  special: '\b(o|o0|o1|of|os|sa|ia|ir)\b'
+
+contexts:
+
+  code:
+
+    - match: '\#{3}'
+      scope: punctuation.definition.comment.begin.ports
+      push: comment_block
+
+    - match: '\#'
+      scope: punctuation.definition.comment.begin.ports
+      push: comment_line
+
+    - match: '(\[)([^\[\]]+)(\])'
+      captures:
+        1: keyword.import.ports
+        2: string.other.ports
+        3: keyword.import.ports
+
+    - match: '\{'
+      scope: punctuation.section.block.begin.ports
+      push: curly_block
+
+    - match: '\}'
+      scope: invalid.illegal.stray-bracket-end.ports
+
+    - match: '({{name}})\s*(\|)\s*({{name}})'
+      captures:
+        1: entity.name.function.ports
+        2: keyword.operator.ports
+        3: entity.name.function.ports
+
+    - match: '({{name}})\s*(\|)'
+      captures:
+        1: entity.name.function.ports
+        2: keyword.operator.ports
+
+    - match: '(\|)\s*({{name}})'
+      captures:
+        1: keyword.operator.ports
+        2: entity.name.function.ports
+
+    - match: '({{name}})\s*(\*)'
+      captures:
+        1: entity.name.function.ports
+        2: keyword.operator.ports
+
+    - match: '-|/|:|\*|\|'
+      scope: keyword.operator.ports
+
+    - match: '\.'
+      scope: punctuation.terminator.ports
+
+  main:
+
+    - include: code
+
+    - match: '{{special}}'
+      scope: support.function.ports
+
+    - match: '{{name}}'
+      scope: variable.ports
+
+    - match: '[\S]'
+      scope: invalid.illegal.ports
+
+  comment_line:
+
+    - meta_scope: comment.line.ports
+
+    - match: '$' # stonks
+      scope: punctuation.definition.comment.end.ports
+      pop: true
+
+  comment_block:
+
+    - meta_scope: comment.block.ports
+
+    - match: '\#{3}'
+      scope: punctuation.definition.comment.end.ports
+      pop: true
+
+  curly_block:
+
+    - meta_scope: meta.block.ports
+
+    - match: '\}'
+      scope: punctuation.section.block.end.ports
+      pop: true
+
+    - include: code
+
+    - match: '{{name}}'
+      scope: variable.ports
+
+    - match: '[\S]'
+      scope: invalid.illegal.ports
