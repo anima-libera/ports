@@ -1,0 +1,76 @@
+
+m*
+i|o
+{
+	m*
+	o:w0l|w0
+	o:w1l|w1
+	o:rl|r
+	o:r0l|r0
+	o:r1l|r1
+	o:rel|re
+	w0l-w0p
+	w1l-w1p
+	rl-rep
+	ot-recp
+	e-1.1*
+	r0p*
+	rl-r
+	r0l-2.2*
+	r0pr* r0l-3.3*
+	r1p*
+	rl-r
+	r1l-4.4*
+	r1pr* r1l-5.5*
+	rep*  rel-6.6*
+	repr* rel-7.7*
+	rb*
+	rec*
+	ot*
+	rb-8.8*
+	recp*
+	i|o{}
+	i-9.9*
+	r0-r0pr
+	r1-r1pr
+	re-repr
+	ot
+	rb-10.10*
+	w0p*
+	rec-11.11*
+	rl-r0p
+	w0l-w0
+	w1l-w1
+	rep-12.12*
+	w1p*
+	rec-13.13*
+	rl-r1p
+	w0l-w0
+	w1l-w1
+	rep-14.14*
+	e*
+}
+ia-1.1*
+i-2.2*
+o0-w0p
+o1-w1p
+il*
+re-il
+ir-3.3*
+r0-o0p
+r1-o1p
+re-e
+ol-4.4*
+w0p* w0-5.5*
+w1p* w1-6.6*
+ol*
+r-7.7*
+o0p*
+o0-8.8*
+ol-9.9*
+o1p*
+o1-10.10*
+ol-11.11*
+e*
+o0-12.12*o0-13.13*o0-14.14*o0-15.15*o1-16.16*o0-17.17*o1-18.18*o0-19.19*
+of-20.20*
