@@ -5,7 +5,13 @@
 ![Ports logo](/logo/logo.svg)
 
 
-Please read the [documentation](https://github.com/anima-libera/ports/blob/master/ports-doc.pdf) or the [esolangs wiki page](https://esolangs.org/wiki/Ports). It is Turing-complete, imperative and original (not inspired by any other esolang). And it has Sublime Text syntax support !
+Please read the [documentation](https://github.com/anima-libera/ports/blob/master/ports-doc.pdf) or the [esolangs wiki page](https://esolangs.org/wiki/Ports). It is Turing-complete, imperative and original (not inspired by any other esolang). And it has Sublime Text syntax support ! And it has a logo !
+
+
+### Run source code
+```
+python3 ports.py filename
+```
 
 
 ### Code example: obfusced cat
